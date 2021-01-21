@@ -192,12 +192,13 @@
 
 
 
-						<form>
+						<form id="quote-form">
 
 							<fieldset>
+								<input type="hidden" name="action" value="contact_send" />
 
 								<div class="row align-items-center">
-									<div class="col-md-8">
+									<div class="col-md-6">
 										<label for="quote[buildtype]">Type of Building</label>
 										<select id="building-type" class="form-control" name="quote[buildtype]">
 											<option id="default" value="default">--- Select ---</option>
@@ -212,15 +213,15 @@
 								<div id="residentialInputs" class="building_type">
 
 									<div class="row align-items-center">
-										<div id="number-of-apartments" class="col-md-6">
+										<div id="number-of-apartments" class="col-md-4">
 											<label for="quote[apartments]">Number of Apartments</label>
 											<input type="number" value="residential" class="form-control"
-												name="napartments" min="1">
+												name="napartments" min="0">
 										</div>
 									</div>
 
 									<div class="row align-items-center">
-										<div id="number-of-floors" class="col-md-6">
+										<div id="number-of-floors" class="col-md-4">
 											<label for="quote[floors]">Number of Floors</label>
 											<input type="number" value="" class="form-control" name="nfloors" min="2"
 												max="160">
@@ -228,16 +229,10 @@
 									</div>
 
 									<div class="row align-items-center">
-										<div id="number-of-basements" class="col-md-6">
+										<div id="number-of-basements" class="col-md-4">
 											<label for="quote[basements]">Number of Basements</label>
 											<input type="number" value="" class="form-control" name="nbasements"
 												min="0">
-										</div>
-									</div>
-
-									<div class="row align-items-center">
-										<div id="submit-button-residential" class="col-md-6">
-											<input type="submit" class="btn btn-primary" value="CALCULATE">
 										</div>
 									</div>
 
@@ -246,7 +241,7 @@
 								<div id="commercialInputs" class="building_type">
 
 									<div class="row align-items-center">
-										<div id="number-of-floors" class="col-md-6">
+										<div id="number-of-floors" class="col-md-4">
 											<label for="quote[floors]">Number of Floors</label>
 											<input type="number" value="" class="form-control" name="nfloors" min="2"
 												max="160">
@@ -254,7 +249,7 @@
 									</div>
 
 									<div class="row align-items-center">
-										<div id="number-of-basements" class="col-md-6">
+										<div id="number-of-basements" class="col-md-4">
 											<label for="quote[basements]">Number of Basements</label>
 											<input type="number" value="" class="form-control" name="nbasements"
 												min="0">
@@ -262,15 +257,15 @@
 									</div>
 
 									<div class="row align-items-center">
-										<div id="number-of-companies" class="col-md-6">
+										<div id="number-of-companies" class="col-md-4">
 											<label for="quote[companies]">Number of Companies</label>
 											<input type="number" value="" class="form-control" name="ncompanies"
-												min="1">
+												min="0">
 										</div>
 									</div>
 
 									<div class="row align-items-center">
-										<div id="number-of-parking-spots" class="col-md-6">
+										<div id="number-of-parking-spots" class="col-md-4">
 											<label for="quote[parking]">Number of Parking Spots</label>
 											<input type="number" value="" class="form-control" name="nparkingspots"
 												min="0">
@@ -278,16 +273,10 @@
 									</div>
 
 									<div class="row align-items-center">
-										<div id="number-of-elevators" class="col-md-6">
+										<div id="number-of-elevators" class="col-md-4">
 											<label for="quote[elevators]">Number of Elevators</label>
 											<input type="number" value="" class="form-control" name="nelevators"
-												min="1">
-										</div>
-									</div>
-
-									<div class="row align-items-center">
-										<div id="submit-button-commercial" class="col-md-6">
-											<input type="submit" class="btn btn-primary" value="CALCULATE">
+												min="0">
 										</div>
 									</div>
 
@@ -296,7 +285,7 @@
 								<div id="corporateInputs" class="building_type">
 
 									<div class="row align-items-center">
-										<div id="number-of-floors" class="col-md-6">
+										<div id="number-of-floors" class="col-md-4">
 											<label for="quote[floors]">Number of Floors</label>
 											<input type="number" value="" class="form-control" name="nfloors" min="2"
 												max="160">
@@ -304,7 +293,7 @@
 									</div>
 
 									<div class="row align-items-center">
-										<div id="number-of-basements" class="col-md-6">
+										<div id="number-of-basements" class="col-md-4">
 											<label for="quote[basements]">Number of Basements</label>
 											<input type="number" value="" class="form-control" name="nbasements"
 												min="0">
@@ -312,7 +301,7 @@
 									</div>
 
 									<div class="row align-items-center">
-										<div id="number-of-parking-spots" class="col-md-6">
+										<div id="number-of-parking-spots" class="col-md-4">
 											<label for="quote[parking]">Number of Parking Spots</label>
 											<input type="number" value="" class="form-control" name="nparkingspots"
 												min="0">
@@ -320,23 +309,17 @@
 									</div>
 
 									<div class="row align-items-center">
-										<div id="number-of-corporations" class="col-md-6">
+										<div id="number-of-corporations" class="col-md-4">
 											<label for="quote[corporations]">Number of Corporations</label>
-											<input type="number" value="" class="form-control" name="ncorps" min="1">
+											<input type="number" value="" class="form-control" name="ncorps" min="0">
 										</div>
 									</div>
 
 									<div class="row align-items-center">
-										<div id="maximum-occupancy" class="col-md-6">
+										<div id="maximum-occupancy" class="col-md-4">
 											<label for="quote[occupancy]">Maximum Occupancy</label>
 											<input type="number" value="" class="form-control" name="maxoccupancy"
-												min="1">
-										</div>
-									</div>
-
-									<div class="row align-items-center">
-										<div id="submit-button-corporate" class="col-md-6">
-											<input type="submit" class="btn btn-primary" value="CALCULATE">
+												min="0">
 										</div>
 									</div>
 
@@ -345,7 +328,7 @@
 								<div id="hybridInputs" class="building_type">
 
 									<div class="row align-items-center">
-										<div id="number-of-floors" class="col-md-6">
+										<div id="number-of-floors" class="col-md-4">
 											<label for="quote[floors]">Number of Floors</label>
 											<input type="number" value="" class="form-control" name="nfloors" min="2"
 												max="160">
@@ -353,7 +336,7 @@
 									</div>
 
 									<div class="row align-items-center">
-										<div id="number-of-basements" class="col-md-6">
+										<div id="number-of-basements" class="col-md-4">
 											<label for="quote[basements]">Number of Basements</label>
 											<input type="number" value="" class="form-control" name="nbasements"
 												min="0">
@@ -361,15 +344,15 @@
 									</div>
 
 									<div class="row align-items-center">
-										<div id="number-of-companies" class="col-md-6">
+										<div id="number-of-companies" class="col-md-4">
 											<label for="quote[companies]">Number of Companies</label>
 											<input type="number" value="" class="form-control" name="ncompanies"
-												min="1">
+												min="0">
 										</div>
 									</div>
 
 									<div class="row align-items-center">
-										<div id="number-of-parking-spots" class="col-md-6">
+										<div id="number-of-parking-spots" class="col-md-4">
 											<label for="quote[parking]">Number of Parking Spots</label>
 											<input type="number" value="" class="form-control" name="nparkingspots"
 												min="0">
@@ -377,24 +360,18 @@
 									</div>
 
 									<div class="row align-items-center">
-										<div id="maximum-occupancy" class="col-md-6">
+										<div id="maximum-occupancy" class="col-md-4">
 											<label for="quote[occupancy]">Maximum Occupancy</label>
 											<input type="number" value="" class="form-control" name="maxoccupancy"
-												min="1">
+												min="0">
 										</div>
 									</div>
 
 									<div class="row align-items-center">
-										<div id="business-hours" class="col-md-6">
+										<div id="business-hours" class="col-md-4">
 											<label for="quote[businesshours]">Business Hours</label>
-											<input type="number" value="" class="form-control" name="bizhours" min="1"
+											<input type="number" value="" class="form-control" name="bizhours" min="0"
 												max="24">
-										</div>
-									</div>
-
-									<div class="row align-items-center">
-										<div id="submit-button-hybrid" class="col-md-6">
-											<input type="submit" class="btn btn-primary" value="CALCULATE">
 										</div>
 									</div>
 
@@ -409,17 +386,9 @@
 					</div>
 					<!-- /FORM -->
 
-					<!-- QUOTE CALCULATOR -->
-					<div class="col-md-4">
-						<h2>QUOTE CALCULATOR</h2>
-
-
-
-
-
-					</div>
-
 				</div>
+
+			</div>
 		</section>
 		<!-- /QUOTE FORM -->
 

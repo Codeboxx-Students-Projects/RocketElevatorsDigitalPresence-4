@@ -160,6 +160,12 @@
 										CONTACT
 									</a>
 								</li>
+								<li>
+									<!-- QUOTE FORM -->
+									<a id="quote-nav" href="quote.html">
+										GET QUOTE
+									</a>
+								</li>
 							</ul>
 
 						</nav>
@@ -185,22 +191,21 @@
 				</header>
 
 
-				<div class="row align-items-center">
+				<div class="row">
 
 					<!-- FORM -->
-					<div class="col align-self-center">
+					<div class="col-md-6">
 
 
 
-						<form id="quote-form">
+						<form onsubmit="return false">
 
-							<fieldset>
-								<input type="hidden" name="action" value="contact_send" />
+							<div>
 
-								<div class="row align-items-center">
-									<div class="col-md-6">
+								<div class="row">
+									<div class="col">
 										<label for="quote[buildtype]">Type of Building</label>
-										<select id="building-type" class="form-control" name="quote[buildtype]">
+										<select id="building-type" class="form-control">
 											<option id="default" value="default">--- Select ---</option>
 											<option id="residential" value="residentialInputs">Residential</option>
 											<option id="commercial" value="commercialInputs">Commercial</option>
@@ -212,26 +217,26 @@
 
 								<div id="residentialInputs" class="building_type">
 
-									<div class="row align-items-center">
-										<div id="number-of-apartments" class="col-md-4">
+									<div class="row">
+										<div id="number-of-apartments" class="col-md-6">
 											<label for="quote[apartments]">Number of Apartments</label>
-											<input type="number" value="residential" class="form-control"
-												name="napartments" min="0">
+											<input id="residentialApartments" type="number" value=""
+												class="form-control" min="1">
 										</div>
 									</div>
 
-									<div class="row align-items-center">
-										<div id="number-of-floors" class="col-md-4">
+									<div class="row">
+										<div id="number-of-floors" class="col-md-6">
 											<label for="quote[floors]">Number of Floors</label>
-											<input type="number" value="" class="form-control" name="nfloors" min="2"
-												max="160">
+											<input id="residentialFloors" type="number" value="" class="form-control"
+												min="2" max="160">
 										</div>
 									</div>
 
-									<div class="row align-items-center">
-										<div id="number-of-basements" class="col-md-4">
+									<div class="row">
+										<div id="number-of-basements" class="col-md-6">
 											<label for="quote[basements]">Number of Basements</label>
-											<input type="number" value="" class="form-control" name="nbasements"
+											<input id="residentialBasements" type="number" value="" class="form-control"
 												min="0">
 										</div>
 									</div>
@@ -240,43 +245,43 @@
 
 								<div id="commercialInputs" class="building_type">
 
-									<div class="row align-items-center">
-										<div id="number-of-floors" class="col-md-4">
+									<div class="row">
+										<div id="number-of-floors-commercial" class="col-md-6">
 											<label for="quote[floors]">Number of Floors</label>
-											<input type="number" value="" class="form-control" name="nfloors" min="2"
-												max="160">
+											<input id="commercialFloors" type="number" value="" class="form-control"
+												min="2" max="160">
 										</div>
 									</div>
 
-									<div class="row align-items-center">
-										<div id="number-of-basements" class="col-md-4">
+									<div class="row">
+										<div id="number-of-basements-commercial" class="col-md-6">
 											<label for="quote[basements]">Number of Basements</label>
-											<input type="number" value="" class="form-control" name="nbasements"
+											<input id="commercialBasements" type="number" value="" class="form-control"
 												min="0">
 										</div>
 									</div>
 
-									<div class="row align-items-center">
-										<div id="number-of-companies" class="col-md-4">
+									<div class="row">
+										<div id="number-of-companies" class="col-md-6">
 											<label for="quote[companies]">Number of Companies</label>
-											<input type="number" value="" class="form-control" name="ncompanies"
-												min="0">
+											<input id="commercialCompanies" type="number" value="" class="form-control"
+												min="1">
 										</div>
 									</div>
 
-									<div class="row align-items-center">
-										<div id="number-of-parking-spots" class="col-md-4">
+									<div class="row">
+										<div id="number-of-parking-spots" class="col-md-6">
 											<label for="quote[parking]">Number of Parking Spots</label>
-											<input type="number" value="" class="form-control" name="nparkingspots"
+											<input id="commercialParking" type="number" value="" class="form-control"
 												min="0">
 										</div>
 									</div>
 
-									<div class="row align-items-center">
-										<div id="number-of-elevators" class="col-md-4">
+									<div class="row">
+										<div id="number-of-elevators" class="col-md-6">
 											<label for="quote[elevators]">Number of Elevators</label>
-											<input type="number" value="" class="form-control" name="nelevators"
-												min="0">
+											<input id="commercialElevators" type="number" value="" class="form-control"
+												min="1">
 										</div>
 									</div>
 
@@ -284,42 +289,43 @@
 
 								<div id="corporateInputs" class="building_type">
 
-									<div class="row align-items-center">
-										<div id="number-of-floors" class="col-md-4">
+									<div class="row">
+										<div id="number-of-floors-corporate" class="col-md-6">
 											<label for="quote[floors]">Number of Floors</label>
-											<input type="number" value="" class="form-control" name="nfloors" min="2"
-												max="160">
+											<input id="corporateFloors" type="number" value="" class="form-control"
+												min="2" max="160">
 										</div>
 									</div>
 
-									<div class="row align-items-center">
-										<div id="number-of-basements" class="col-md-4">
+									<div class="row">
+										<div id="number-of-basements-corporate" class="col-md-6">
 											<label for="quote[basements]">Number of Basements</label>
-											<input type="number" value="" class="form-control" name="nbasements"
+											<input id="corporateBasements" type="number" value="" class="form-control"
 												min="0">
 										</div>
 									</div>
 
-									<div class="row align-items-center">
-										<div id="number-of-parking-spots" class="col-md-4">
+									<div class="row">
+										<div id="number-of-parking-spots-corporate" class="col-md-6">
 											<label for="quote[parking]">Number of Parking Spots</label>
-											<input type="number" value="" class="form-control" name="nparkingspots"
+											<input id="corporateParking" type="number" value="" class="form-control"
 												min="0">
 										</div>
 									</div>
 
-									<div class="row align-items-center">
-										<div id="number-of-corporations" class="col-md-4">
+									<div class="row">
+										<div id="number-of-corporations" class="col-md-6">
 											<label for="quote[corporations]">Number of Corporations</label>
-											<input type="number" value="" class="form-control" name="ncorps" min="0">
+											<input id="corporateCorporations" type="number" value=""
+												class="form-control" min="1">
 										</div>
 									</div>
 
-									<div class="row align-items-center">
-										<div id="maximum-occupancy" class="col-md-4">
-											<label for="quote[occupancy]">Maximum Occupancy</label>
-											<input type="number" value="" class="form-control" name="maxoccupancy"
-												min="0">
+									<div class="row">
+										<div id="maximum-occupancy" class="col-md-6">
+											<label for="quote[occupancy]">Occupants per Floor</label>
+											<input id="corporateOccupancy" type="number" value="" class="form-control"
+												min="1">
 										</div>
 									</div>
 
@@ -327,57 +333,57 @@
 
 								<div id="hybridInputs" class="building_type">
 
-									<div class="row align-items-center">
-										<div id="number-of-floors" class="col-md-4">
+									<div class="row">
+										<div id="number-of-floors-hybrid" class="col-md-6">
 											<label for="quote[floors]">Number of Floors</label>
-											<input type="number" value="" class="form-control" name="nfloors" min="2"
+											<input id="hybridFloors" type="number" value="" class="form-control" min="2"
 												max="160">
 										</div>
 									</div>
 
-									<div class="row align-items-center">
-										<div id="number-of-basements" class="col-md-4">
+									<div class="row">
+										<div id="number-of-basements-hybrid" class="col-md-6">
 											<label for="quote[basements]">Number of Basements</label>
-											<input type="number" value="" class="form-control" name="nbasements"
+											<input id="hybridBasements" type="number" value="" class="form-control"
 												min="0">
 										</div>
 									</div>
 
-									<div class="row align-items-center">
-										<div id="number-of-companies" class="col-md-4">
+									<div class="row">
+										<div id="number-of-companies-hybrid" class="col-md-6">
 											<label for="quote[companies]">Number of Companies</label>
-											<input type="number" value="" class="form-control" name="ncompanies"
-												min="0">
+											<input id="hybridCompanies" type="number" value="" class="form-control"
+												min="1">
 										</div>
 									</div>
 
-									<div class="row align-items-center">
-										<div id="number-of-parking-spots" class="col-md-4">
+									<div class="row">
+										<div id="number-of-parking-spots-hybrid" class="col-md-6">
 											<label for="quote[parking]">Number of Parking Spots</label>
-											<input type="number" value="" class="form-control" name="nparkingspots"
+											<input id="hybridParking" type="number" value="" class="form-control"
 												min="0">
 										</div>
 									</div>
 
-									<div class="row align-items-center">
-										<div id="maximum-occupancy" class="col-md-4">
-											<label for="quote[occupancy]">Maximum Occupancy</label>
-											<input type="number" value="" class="form-control" name="maxoccupancy"
-												min="0">
+									<div class="row">
+										<div id="maximum-occupancy-hybrid" class="col-md-6">
+											<label for="quote[occupancy]">Occupants per Floor</label>
+											<input id="hybridOccupancy" type="number" value="" class="form-control"
+												min="1">
 										</div>
 									</div>
 
-									<div class="row align-items-center">
-										<div id="business-hours" class="col-md-4">
+									<div class="row">
+										<div id="business-hours" class="col-md-6">
 											<label for="quote[businesshours]">Business Hours</label>
-											<input type="number" value="" class="form-control" name="bizhours" min="0"
+											<input id="bizHours" type="number" value="" class="form-control" min="1"
 												max="24">
 										</div>
 									</div>
 
 								</div>
 
-
+							</div>
 
 							</fieldset>
 
@@ -386,11 +392,76 @@
 					</div>
 					<!-- /FORM -->
 
-				</div>
+					<!-- FORM -->
+					<div class="col-md-6">
+						<h2 class="text-center">Quote Generator</h2>
 
-			</div>
+						<form id="quote_generator">
+
+							<div>
+
+								<div class="col">
+									<div class="row justify-content-center">
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" type="radio" id="standard"
+												name="selectedProduct" value="standard">
+											<label class="form-check-label" for="">Standard</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" type="radio" id="premium"
+												name="selectedProduct" value="premium">
+											<label class="form-check-label" for="">Premium</label>
+										</div>
+										<div class="form-check form-check-inline">
+											<input class="form-check-input" type="radio" id="excelium"
+												name="selectedProduct" value="excelium">
+											<label class="form-check-label" for="">Excelium</label>
+										</div>
+									</div>
+								</div> <br>
+
+								<div id="elevator-amount" class="form-group row">
+									<label for="nbElevators" class="col col-form-label">Number of Elevators
+										Required</label>
+									<div class="col">
+										<input type="number" value"" class="form-control" id="elevatorsReq" readonly>
+									</div>
+								</div>
+
+								<div id="elevator-unit-price" class="form-group row">
+									<label for="unitPrice" class="col col-form-label">Unit Price per
+										Elevator</label>
+									<div class="col">
+										<input type="number" value"" class="form-control" id="unitPrice" readonly>
+									</div>
+								</div>
+
+								<div id="elevator-total-price" class="form-group row">
+									<label for="elevatorsPrice" class="col col-form-label">Total Price of
+										Elevators</label>
+									<div class="col">
+										<input type="number" value"" class="form-control" id="elevatorsPrice" readonly>
+									</div>
+								</div>
+
+								<div id="installation-fees" class="form-group row">
+									<label for="installFees" class="col col-form-label">Installation
+										Fees</label>
+									<div class="col">
+										<input type="number" value"" class="form-control" id="installFees" readonly>
+										<input type="hidden" value"" class="form-control" id="installPercent">
+									</div>
+								</div>
+
+								<div id="final-price" class="form-group row">
+									<label for="totalPrice" class="col col-form-label">Final Price</label>
+									<div class="col">
+										<input type="number" value"" class="form-control" id="finalPrice" readonly>
+									</div>
+								</div>
+
+							</div>
 		</section>
-		<!-- /QUOTE FORM -->
 
 
 
@@ -426,7 +497,7 @@
 							data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-								<input type="email" id="email" name="email" class="form-control required"
+								<input type="email" id="email-newsletter" name="email" class="form-control required"
 									placeholder="Enter your Email">
 								<span class="input-group-btn">
 									<button class="btn btn-primary" type="submit">Subscribe</button>
@@ -486,10 +557,14 @@
 	<scrip src="assets/js/view/demo.revolution_slider.js">
 		</script>
 
+
+
 		<!-- PAGELEVEL SCRIPTS -->
 		<scrip src="assets/js/contact.js"></scrip>
 
 		<script>
+
+			//  SHOW OR HIDE INPUT FIELDS BASED ON DROPDOWN SELECTION //
 			$(document).ready(function () {
 				$('.building_type').hide();
 
@@ -498,6 +573,150 @@
 					$('#' + $(this).val()).show();
 				})
 			});
+
+
+			//  ASSIGN INPUT VALUES BASED ON PRODUCT LINE SELECTION - FIXED VALUES ACROSS SCENARIOS  //
+
+			document.getElementById("standard").onchange = function () { standardDisplay() };
+
+			function standardDisplay() {
+				document.getElementById("unitPrice").value = "7565";
+				document.getElementById("installPercent").value = 0.10;
+			}
+
+			document.getElementById("premium").onchange = function () { premiumDisplay() };
+
+			function premiumDisplay() {
+				document.getElementById("unitPrice").value = "12345";
+				document.getElementById("installPercent").value = 0.13;
+			}
+
+			document.getElementById("excelium").onchange = function () { exceliumDisplay() };
+
+			function exceliumDisplay() {
+				document.getElementById("unitPrice").value = "15400";
+				document.getElementById("installPercent").value = 0.16;
+			}
+
+
+
+			//RESIDENTIAL SELECTION FROM DROPDOWN  --  RESIDENTIAL SCENARIO//
+
+			document.getElementById("residentialApartments").addEventListener("change", residentialQuote);
+			document.getElementById("residentialFloors").addEventListener("change", residentialQuote);
+
+			document.getElementById("standard").addEventListener("change", residentialQuote);
+			document.getElementById("premium").addEventListener("change", residentialQuote);
+			document.getElementById("excelium").addEventListener("change", residentialQuote);
+
+
+			async function residentialQuote() {
+				var resApartments = document.getElementById("residentialApartments").value;
+				var resFloors = document.getElementById("residentialFloors").value;
+				var avgApartmentsperFloor = resApartments / resFloors;
+				var shaftsReqRes = avgApartmentsperFloor / 6;
+				document.getElementById("elevatorsReq").value = Math.ceil(shaftsReqRes);
+				if (resFloors > 20) {
+					document.getElementById("elevatorsReq").value = Math.ceil(shaftsReqRes * 2);
+				}
+				var elevatorsReqRes = document.getElementById("elevatorsReq").value;
+				var unitPriceRes = document.getElementById("unitPrice").value;
+				var elevatorsPriceRes = elevatorsReqRes * unitPriceRes;
+				document.getElementById("elevatorsPrice").value = elevatorsPriceRes;
+				var installPercent = document.getElementById("installPercent").value;
+				var installFeesRes = installPercent * elevatorsPriceRes;
+				document.getElementById("installFees").value = installFeesRes;
+				var finalPriceRes = elevatorsPriceRes + installFeesRes;
+				document.getElementById("finalPrice").value = finalPriceRes;
+			}
+
+
+			//COMMERCIAL SELECTION FROM DROPDOWN  --  COMMERCIAL SCENARIO//
+
+			document.getElementById("commercialElevators").addEventListener("change", commercialQuote);
+
+			document.getElementById("standard").addEventListener("change", commercialQuote);
+			document.getElementById("premium").addEventListener("change", commercialQuote);
+			document.getElementById("excelium").addEventListener("change", commercialQuote);
+
+
+			async function commercialQuote() {
+				var commElevators = document.getElementById("commercialElevators").value;
+				document.getElementById("elevatorsReq").value = Math.ceil(commElevators);
+				var elevatorsReqComm = document.getElementById("elevatorsReq").value;
+				var unitPriceComm = document.getElementById("unitPrice").value;
+				var elevatorsPriceComm = elevatorsReqComm * unitPriceComm;
+				document.getElementById("elevatorsPrice").value = elevatorsPriceComm;
+				var installPercent = document.getElementById("installPercent").value;
+				var installFeesComm = installPercent * elevatorsPriceComm;
+				document.getElementById("installFees").value = installFeesComm;
+				var finalPriceComm = elevatorsPriceComm + installFeesComm;
+				document.getElementById("finalPrice").value = finalPriceComm;
+			}
+
+
+			//CORPORATE SELECTION FROM DROPDOWN -- CORPORATE SCENARIO//
+
+			document.getElementById("corporateFloors").addEventListener("change", corporateQuote);
+			document.getElementById("corporateBasements").addEventListener("change", corporateQuote);
+			document.getElementById("corporateOccupancy").addEventListener("change", corporateQuote);
+
+			document.getElementById("standard").addEventListener("change", corporateQuote);
+			document.getElementById("premium").addEventListener("change", corporateQuote);
+			document.getElementById("excelium").addEventListener("change", corporateQuote);
+
+
+			async function corporateQuote() {
+				var corpFloors = document.getElementById("corporateFloors").value;
+				var corpBasements = document.getElementById("corporateBasements").value;
+				var corpOccupancy = document.getElementById("corporateOccupancy").value;
+				var totalStories = +corpFloors + +corpBasements;
+				var totalOccupancy = totalStories * corpOccupancy;
+				var shaftsReqCorp = totalOccupancy / 1000;
+				document.getElementById("elevatorsReq").value = Math.ceil(shaftsReqCorp);
+				var elevatorsReqCorp = document.getElementById("elevatorsReq").value;
+				var unitPriceCorp = document.getElementById("unitPrice").value;
+				var elevatorsPriceCorp = elevatorsReqCorp * unitPriceCorp;
+				document.getElementById("elevatorsPrice").value = elevatorsPriceCorp;
+				var installPercent = document.getElementById("installPercent").value;
+				var installFeesCorp = installPercent * elevatorsPriceCorp;
+				document.getElementById("installFees").value = installFeesCorp;
+				var finalPriceCorp = elevatorsPriceCorp + installFeesCorp;
+				document.getElementById("finalPrice").value = finalPriceCorp;
+			}
+
+
+			//HYBRID SELECTION FROM DROPDOWN -- HYBRID SCENARIO//
+
+			document.getElementById("hybridFloors").addEventListener("change", hybridQuote);
+			document.getElementById("hybridBasements").addEventListener("change", hybridQuote);
+			document.getElementById("hybridOccupancy").addEventListener("change", hybridQuote);
+
+			document.getElementById("standard").addEventListener("change", hybridQuote);
+			document.getElementById("premium").addEventListener("change", hybridQuote);
+			document.getElementById("excelium").addEventListener("change", hybridQuote);
+
+
+			async function hybridQuote() {
+				var hybFloors = document.getElementById("hybridFloors").value;
+				var hybBasements = document.getElementById("hybridBasements").value;
+				var hybOccupancy = document.getElementById("hybridOccupancy").value;
+				var totalStories = +hybFloors + +hybBasements;
+				var totalOccupancy = totalStories * hybOccupancy;
+				var shaftsReqHyb = totalOccupancy / 1000;
+				document.getElementById("elevatorsReq").value = Math.ceil(shaftsReqHyb);
+				var elevatorsReqHyb = document.getElementById("elevatorsReq").value;
+				var unitPriceHyb = document.getElementById("unitPrice").value;
+				var elevatorsPriceHyb = elevatorsReqHyb * unitPriceHyb;
+				document.getElementById("elevatorsPrice").value = elevatorsPriceHyb;
+				var installPercent = document.getElementById("installPercent").value;
+				var installFeesHyb = installPercent * elevatorsPriceHyb;
+				document.getElementById("installFees").value = installFeesHyb;
+				var finalPriceHyb = elevatorsPriceHyb + installFeesHyb;
+				document.getElementById("finalPrice").value = finalPriceHyb;
+			}
+
+
 		</script>
 
 </body>
