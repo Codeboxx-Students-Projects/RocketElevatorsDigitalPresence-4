@@ -32,6 +32,12 @@
 	<link href="assets/css/header-1.css" rel="stylesheet" type="text/css" />
 	<link href="assets/css/color_scheme/blue.css" rel="stylesheet" type="text/css" id="color_scheme" />
 
+	<style>
+		.enMoney::before {
+			content: "$";
+		}
+	</style>
+
 </head>
 
 <!--
@@ -200,7 +206,10 @@
 
 						<form onsubmit="return false">
 
+
+
 							<div>
+
 
 								<div class="row">
 									<div class="col">
@@ -292,7 +301,7 @@
 									<div class="row">
 										<div id="number-of-floors-corporate" class="col-md-6">
 											<label for="quote[floors]">Number of Floors</label>
-											<input id="corporateFloors" type="number" value="" class="form-control"
+											<input id="corporateFloors" type="text" value="" class="form-control"
 												min="2" max="160">
 										</div>
 									</div>
@@ -300,7 +309,7 @@
 									<div class="row">
 										<div id="number-of-basements-corporate" class="col-md-6">
 											<label for="quote[basements]">Number of Basements</label>
-											<input id="corporateBasements" type="number" value="" class="form-control"
+											<input id="corporateBasements" type="text" value="" class="form-control"
 												min="0">
 										</div>
 									</div>
@@ -308,7 +317,7 @@
 									<div class="row">
 										<div id="number-of-parking-spots-corporate" class="col-md-6">
 											<label for="quote[parking]">Number of Parking Spots</label>
-											<input id="corporateParking" type="number" value="" class="form-control"
+											<input id="corporateParking" type="text" value="" class="form-control"
 												min="0">
 										</div>
 									</div>
@@ -316,15 +325,15 @@
 									<div class="row">
 										<div id="number-of-corporations" class="col-md-6">
 											<label for="quote[corporations]">Number of Corporations</label>
-											<input id="corporateCorporations" type="number" value=""
-												class="form-control" min="1">
+											<input id="corporateCorporations" type="text" value="" class="form-control"
+												min="1">
 										</div>
 									</div>
 
 									<div class="row">
 										<div id="maximum-occupancy" class="col-md-6">
 											<label for="quote[occupancy]">Occupants per Floor</label>
-											<input id="corporateOccupancy" type="number" value="" class="form-control"
+											<input id="corporateOccupancy" type="text" value="" class="form-control"
 												min="1">
 										</div>
 									</div>
@@ -336,7 +345,7 @@
 									<div class="row">
 										<div id="number-of-floors-hybrid" class="col-md-6">
 											<label for="quote[floors]">Number of Floors</label>
-											<input id="hybridFloors" type="number" value="" class="form-control" min="2"
+											<input id="hybridFloors" type="text" value="" class="form-control" min="2"
 												max="160">
 										</div>
 									</div>
@@ -344,7 +353,7 @@
 									<div class="row">
 										<div id="number-of-basements-hybrid" class="col-md-6">
 											<label for="quote[basements]">Number of Basements</label>
-											<input id="hybridBasements" type="number" value="" class="form-control"
+											<input id="hybridBasements" type="text" value="" class="form-control"
 												min="0">
 										</div>
 									</div>
@@ -352,7 +361,7 @@
 									<div class="row">
 										<div id="number-of-companies-hybrid" class="col-md-6">
 											<label for="quote[companies]">Number of Companies</label>
-											<input id="hybridCompanies" type="number" value="" class="form-control"
+											<input id="hybridCompanies" type="text" value="" class="form-control"
 												min="1">
 										</div>
 									</div>
@@ -360,15 +369,14 @@
 									<div class="row">
 										<div id="number-of-parking-spots-hybrid" class="col-md-6">
 											<label for="quote[parking]">Number of Parking Spots</label>
-											<input id="hybridParking" type="number" value="" class="form-control"
-												min="0">
+											<input id="hybridParking" type="text" value="" class="form-control" min="0">
 										</div>
 									</div>
 
 									<div class="row">
 										<div id="maximum-occupancy-hybrid" class="col-md-6">
 											<label for="quote[occupancy]">Occupants per Floor</label>
-											<input id="hybridOccupancy" type="number" value="" class="form-control"
+											<input id="hybridOccupancy" type="text" value="" class="form-control"
 												min="1">
 										</div>
 									</div>
@@ -376,7 +384,7 @@
 									<div class="row">
 										<div id="business-hours" class="col-md-6">
 											<label for="quote[businesshours]">Business Hours</label>
-											<input id="bizHours" type="number" value="" class="form-control" min="1"
+											<input id="bizHours" type="text" value="" class="form-control" min="1"
 												max="24">
 										</div>
 									</div>
@@ -420,11 +428,12 @@
 									</div>
 								</div> <br>
 
+
 								<div id="elevator-amount" class="form-group row">
-									<label for="nbElevators" class="col col-form-label">Number of Elevators
+									<label for="elevatorsReq" class="col col-form-label">Number of Elevators
 										Required</label>
 									<div class="col">
-										<input type="number" value"" class="form-control" id="elevatorsReq" readonly>
+										<input type="text" value"" class="form-control" id="elevatorsReq" readonly>
 									</div>
 								</div>
 
@@ -432,7 +441,7 @@
 									<label for="unitPrice" class="col col-form-label">Unit Price per
 										Elevator</label>
 									<div class="col">
-										<input type="number" value"" class="form-control" id="unitPrice" readonly>
+										<input type="text" value"" class="form-control" id="unitPrice" readonly>
 									</div>
 								</div>
 
@@ -440,7 +449,7 @@
 									<label for="elevatorsPrice" class="col col-form-label">Total Price of
 										Elevators</label>
 									<div class="col">
-										<input type="number" value"" class="form-control" id="elevatorsPrice" readonly>
+										<input type="text" value"" class="form-control" id="elevatorsPrice" readonly>
 									</div>
 								</div>
 
@@ -448,7 +457,7 @@
 									<label for="installFees" class="col col-form-label">Installation
 										Fees</label>
 									<div class="col">
-										<input type="number" value"" class="form-control" id="installFees" readonly>
+										<input type="text" value"" class="form-control" id="installFees" readonly>
 										<input type="hidden" value"" class="form-control" id="installPercent">
 									</div>
 								</div>
@@ -456,7 +465,7 @@
 								<div id="final-price" class="form-group row">
 									<label for="totalPrice" class="col col-form-label">Final Price</label>
 									<div class="col">
-										<input type="number" value"" class="form-control" id="finalPrice" readonly>
+										<input type="text" value"" class="form-control" id="finalPrice" readonly>
 									</div>
 								</div>
 
@@ -493,8 +502,7 @@
 						<!-- Newsletter Form -->
 						<p>Subscribe to Our Newsletter to get Important News & Offers</p>
 
-						<form class="validate" action="php/newsletter.php" method="post"
-							data-success="Subscribed! Thank you!" data-toastr-position="bottom-right">
+						<form>
 							<div class="input-group">
 								<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
 								<input type="email" id="email-newsletter" name="email" class="form-control required"
@@ -564,7 +572,7 @@
 
 		<script>
 
-			//  SHOW OR HIDE INPUT FIELDS BASED ON DROPDOWN SELECTION //
+			//  SHOW OR HIDE INPUT FIELDS BASED ON DROPDOWN SELECTION // -- put back on top
 			$(document).ready(function () {
 				$('.building_type').hide();
 
@@ -599,122 +607,229 @@
 			}
 
 
+			$(function () {
+				$('#building-type').change(function () {
+					var thisVal = $(this).val();
+					if (thisVal == 'residentialInputs') {
+						residentialCalculation();
+					} else if (thisVal == 'commercialInputs') {
+						commercialCalculation();
+					} else if (thisVal == 'corporateInputs') {
+						corporateCalculation();
+					} else if (thisVal == 'hybridInputs') {
+						hybridCalculation();
+					}
+				});
+
+			});
+
+
+
+
 
 			//RESIDENTIAL SELECTION FROM DROPDOWN  --  RESIDENTIAL SCENARIO//
 
-			document.getElementById("residentialApartments").addEventListener("change", residentialQuote);
-			document.getElementById("residentialFloors").addEventListener("change", residentialQuote);
-
-			document.getElementById("standard").addEventListener("change", residentialQuote);
-			document.getElementById("premium").addEventListener("change", residentialQuote);
-			document.getElementById("excelium").addEventListener("change", residentialQuote);
+			async function residentialCalculation() {
 
 
-			async function residentialQuote() {
-				var resApartments = document.getElementById("residentialApartments").value;
-				var resFloors = document.getElementById("residentialFloors").value;
-				var avgApartmentsperFloor = resApartments / resFloors;
-				var shaftsReqRes = avgApartmentsperFloor / 6;
-				document.getElementById("elevatorsReq").value = Math.ceil(shaftsReqRes);
-				if (resFloors > 20) {
-					document.getElementById("elevatorsReq").value = Math.ceil(shaftsReqRes * 2);
+				document.getElementById("residentialApartments").addEventListener("change", residentialQuote);
+				document.getElementById("residentialFloors").addEventListener("change", residentialQuote);
+
+
+				document.getElementById("standard").addEventListener("change", residentialQuote);
+				document.getElementById("premium").addEventListener("change", residentialQuote);
+				document.getElementById("excelium").addEventListener("change", residentialQuote);
+
+
+				async function residentialQuote() {
+					var resApartments = document.getElementById("residentialApartments").value;
+					var resFloors = document.getElementById("residentialFloors").value;
+					var avgApartmentsperFloor = resApartments / resFloors;
+					var shaftsReqRes = avgApartmentsperFloor / 6;
+					document.getElementById("elevatorsReq").value = Math.ceil(shaftsReqRes);
+					if (resFloors > 20) {
+						document.getElementById("elevatorsReq").value = Math.ceil(shaftsReqRes * 2);
+					}
+					var elevatorsReqRes = document.getElementById("elevatorsReq").value;
+					var unitPriceRes = document.getElementById("unitPrice").value;
+					var elevatorsPriceRes = elevatorsReqRes * unitPriceRes;
+					document.getElementById("elevatorsPrice").value = elevatorsPriceRes;
+					var installPercent = document.getElementById("installPercent").value;
+					var installFeesRes = installPercent * elevatorsPriceRes;
+					document.getElementById("installFees").value = installFeesRes;
+					var finalPriceRes = elevatorsPriceRes + installFeesRes;
+					document.getElementById("finalPrice").value = finalPriceRes;
+
+					//FORMAT OUTPUT AS $USD.00//
+
+					var unitRes = unitPriceRes;
+					document.getElementById("unitPrice").value = new Intl.NumberFormat('us-EN', { style: 'currency', currency: 'USD' }).format(unitRes);
+					var elevatorsRes = elevatorsPriceRes;
+					document.getElementById("elevatorsPrice").value = new Intl.NumberFormat('us-EN', { style: 'currency', currency: 'USD' }).format(elevatorsRes);
+					var installRes = installFeesRes;
+					document.getElementById("installFees").value = new Intl.NumberFormat('us-EN', { style: 'currency', currency: 'USD' }).format(installRes);
+					var finalRes = finalPriceRes;
+					document.getElementById("finalPrice").value = new Intl.NumberFormat('us-EN', { style: 'currency', currency: 'USD' }).format(finalRes);
+
+					document.getElementById("building-type").addEventListener("change", refreshPage);
+
+					//RELOAD PAGE IF USER CHANGES BUILDING TYPE//
+
+					async function refreshPage() {
+						location.reload();
+					}
 				}
-				var elevatorsReqRes = document.getElementById("elevatorsReq").value;
-				var unitPriceRes = document.getElementById("unitPrice").value;
-				var elevatorsPriceRes = elevatorsReqRes * unitPriceRes;
-				document.getElementById("elevatorsPrice").value = elevatorsPriceRes;
-				var installPercent = document.getElementById("installPercent").value;
-				var installFeesRes = installPercent * elevatorsPriceRes;
-				document.getElementById("installFees").value = installFeesRes;
-				var finalPriceRes = elevatorsPriceRes + installFeesRes;
-				document.getElementById("finalPrice").value = finalPriceRes;
 			}
 
 
 			//COMMERCIAL SELECTION FROM DROPDOWN  --  COMMERCIAL SCENARIO//
 
-			document.getElementById("commercialElevators").addEventListener("change", commercialQuote);
+			async function commercialCalculation() {
 
-			document.getElementById("standard").addEventListener("change", commercialQuote);
-			document.getElementById("premium").addEventListener("change", commercialQuote);
-			document.getElementById("excelium").addEventListener("change", commercialQuote);
+				document.getElementById("commercialElevators").addEventListener("change", commercialQuote);
 
+				document.getElementById("standard").addEventListener("change", commercialQuote);
+				document.getElementById("premium").addEventListener("change", commercialQuote);
+				document.getElementById("excelium").addEventListener("change", commercialQuote);
 
-			async function commercialQuote() {
-				var commElevators = document.getElementById("commercialElevators").value;
-				document.getElementById("elevatorsReq").value = Math.ceil(commElevators);
-				var elevatorsReqComm = document.getElementById("elevatorsReq").value;
-				var unitPriceComm = document.getElementById("unitPrice").value;
-				var elevatorsPriceComm = elevatorsReqComm * unitPriceComm;
-				document.getElementById("elevatorsPrice").value = elevatorsPriceComm;
-				var installPercent = document.getElementById("installPercent").value;
-				var installFeesComm = installPercent * elevatorsPriceComm;
-				document.getElementById("installFees").value = installFeesComm;
-				var finalPriceComm = elevatorsPriceComm + installFeesComm;
-				document.getElementById("finalPrice").value = finalPriceComm;
+				async function commercialQuote() {
+					var commElevators = document.getElementById("commercialElevators").value;
+					document.getElementById("elevatorsReq").value = Math.ceil(commElevators);
+					var elevatorsReqComm = document.getElementById("elevatorsReq").value;
+					var unitPriceComm = document.getElementById("unitPrice").value;
+					var elevatorsPriceComm = elevatorsReqComm * unitPriceComm;
+					document.getElementById("elevatorsPrice").value = elevatorsPriceComm;
+					var installPercent = document.getElementById("installPercent").value;
+					var installFeesComm = installPercent * elevatorsPriceComm;
+					document.getElementById("installFees").value = installFeesComm;
+					var finalPriceComm = elevatorsPriceComm + installFeesComm;
+					document.getElementById("finalPrice").value = finalPriceComm;
+
+					//FORMAT OUTPUT AS $USD.00//
+
+					var unitComm = unitPriceComm;
+					document.getElementById("unitPrice").value = new Intl.NumberFormat('us-EN', { style: 'currency', currency: 'USD' }).format(unitComm);
+					var elevatorsComm = elevatorsPriceComm;
+					document.getElementById("elevatorsPrice").value = new Intl.NumberFormat('us-EN', { style: 'currency', currency: 'USD' }).format(elevatorsComm);
+					var installComm = installFeesComm;
+					document.getElementById("installFees").value = new Intl.NumberFormat('us-EN', { style: 'currency', currency: 'USD' }).format(installComm);
+					var finalComm = finalPriceComm;
+					document.getElementById("finalPrice").value = new Intl.NumberFormat('us-EN', { style: 'currency', currency: 'USD' }).format(finalComm);
+
+					document.getElementById("building-type").addEventListener("change", refreshPage);
+
+					//RELOAD PAGE IF USER CHANGES BUILDING TYPE//
+
+					async function refreshPage() {
+						location.reload();
+					}
+				}
 			}
 
 
 			//CORPORATE SELECTION FROM DROPDOWN -- CORPORATE SCENARIO//
 
-			document.getElementById("corporateFloors").addEventListener("change", corporateQuote);
-			document.getElementById("corporateBasements").addEventListener("change", corporateQuote);
-			document.getElementById("corporateOccupancy").addEventListener("change", corporateQuote);
+			async function corporateCalculation() {
 
-			document.getElementById("standard").addEventListener("change", corporateQuote);
-			document.getElementById("premium").addEventListener("change", corporateQuote);
-			document.getElementById("excelium").addEventListener("change", corporateQuote);
+				document.getElementById("corporateFloors").addEventListener("change", corporateQuote);
+				document.getElementById("corporateBasements").addEventListener("change", corporateQuote);
+				document.getElementById("corporateOccupancy").addEventListener("change", corporateQuote);
 
+				document.getElementById("standard").addEventListener("change", corporateQuote);
+				document.getElementById("premium").addEventListener("change", corporateQuote);
+				document.getElementById("excelium").addEventListener("change", corporateQuote);
 
-			async function corporateQuote() {
-				var corpFloors = document.getElementById("corporateFloors").value;
-				var corpBasements = document.getElementById("corporateBasements").value;
-				var corpOccupancy = document.getElementById("corporateOccupancy").value;
-				var totalStories = +corpFloors + +corpBasements;
-				var totalOccupancy = totalStories * corpOccupancy;
-				var shaftsReqCorp = totalOccupancy / 1000;
-				document.getElementById("elevatorsReq").value = Math.ceil(shaftsReqCorp);
-				var elevatorsReqCorp = document.getElementById("elevatorsReq").value;
-				var unitPriceCorp = document.getElementById("unitPrice").value;
-				var elevatorsPriceCorp = elevatorsReqCorp * unitPriceCorp;
-				document.getElementById("elevatorsPrice").value = elevatorsPriceCorp;
-				var installPercent = document.getElementById("installPercent").value;
-				var installFeesCorp = installPercent * elevatorsPriceCorp;
-				document.getElementById("installFees").value = installFeesCorp;
-				var finalPriceCorp = elevatorsPriceCorp + installFeesCorp;
-				document.getElementById("finalPrice").value = finalPriceCorp;
+				async function corporateQuote() {
+					var corpFloors = document.getElementById("corporateFloors").value;
+					var corpBasements = document.getElementById("corporateBasements").value;
+					var corpOccupancy = document.getElementById("corporateOccupancy").value;
+					var totalStories = +corpFloors + +corpBasements;
+					var totalOccupancy = totalStories * corpOccupancy;
+					var shaftsReqCorp = totalOccupancy / 1000;
+					document.getElementById("elevatorsReq").value = Math.ceil(shaftsReqCorp);
+					var elevatorsReqCorp = document.getElementById("elevatorsReq").value;
+					var unitPriceCorp = document.getElementById("unitPrice").value;
+					var elevatorsPriceCorp = elevatorsReqCorp * unitPriceCorp;
+					document.getElementById("elevatorsPrice").value = elevatorsPriceCorp;
+					var installPercent = document.getElementById("installPercent").value;
+					var installFeesCorp = installPercent * elevatorsPriceCorp;
+					document.getElementById("installFees").value = installFeesCorp;
+					var finalPriceCorp = elevatorsPriceCorp + installFeesCorp;
+					document.getElementById("finalPrice").value = finalPriceCorp;
+
+					//FORMAT OUTPUT AS $USD.00//
+
+					var unitCorp = unitPriceCorp;
+					document.getElementById("unitPrice").value = new Intl.NumberFormat('us-EN', { style: 'currency', currency: 'USD' }).format(unitCorp);
+					var elevatorsCorp = elevatorsPriceCorp;
+					document.getElementById("elevatorsPrice").value = new Intl.NumberFormat('us-EN', { style: 'currency', currency: 'USD' }).format(elevatorsCorp);
+					var installCorp = installFeesCorp;
+					document.getElementById("installFees").value = new Intl.NumberFormat('us-EN', { style: 'currency', currency: 'USD' }).format(installCorp);
+					var finalCorp = finalPriceCorp;
+					document.getElementById("finalPrice").value = new Intl.NumberFormat('us-EN', { style: 'currency', currency: 'USD' }).format(finalCorp);
+
+					document.getElementById("building-type").addEventListener("change", refreshPage);
+
+					//RELOAD PAGE IF USER CHANGES BUILDING TYPE//
+
+					async function refreshPage() {
+						location.reload();
+					}
+				}
 			}
 
 
 			//HYBRID SELECTION FROM DROPDOWN -- HYBRID SCENARIO//
 
-			document.getElementById("hybridFloors").addEventListener("change", hybridQuote);
-			document.getElementById("hybridBasements").addEventListener("change", hybridQuote);
-			document.getElementById("hybridOccupancy").addEventListener("change", hybridQuote);
+			async function hybridCalculation() {
 
-			document.getElementById("standard").addEventListener("change", hybridQuote);
-			document.getElementById("premium").addEventListener("change", hybridQuote);
-			document.getElementById("excelium").addEventListener("change", hybridQuote);
+				document.getElementById("hybridFloors").addEventListener("change", hybridQuote);
+				document.getElementById("hybridBasements").addEventListener("change", hybridQuote);
+				document.getElementById("hybridOccupancy").addEventListener("change", hybridQuote);
 
+				document.getElementById("standard").addEventListener("change", hybridQuote);
+				document.getElementById("premium").addEventListener("change", hybridQuote);
+				document.getElementById("excelium").addEventListener("change", hybridQuote);
 
-			async function hybridQuote() {
-				var hybFloors = document.getElementById("hybridFloors").value;
-				var hybBasements = document.getElementById("hybridBasements").value;
-				var hybOccupancy = document.getElementById("hybridOccupancy").value;
-				var totalStories = +hybFloors + +hybBasements;
-				var totalOccupancy = totalStories * hybOccupancy;
-				var shaftsReqHyb = totalOccupancy / 1000;
-				document.getElementById("elevatorsReq").value = Math.ceil(shaftsReqHyb);
-				var elevatorsReqHyb = document.getElementById("elevatorsReq").value;
-				var unitPriceHyb = document.getElementById("unitPrice").value;
-				var elevatorsPriceHyb = elevatorsReqHyb * unitPriceHyb;
-				document.getElementById("elevatorsPrice").value = elevatorsPriceHyb;
-				var installPercent = document.getElementById("installPercent").value;
-				var installFeesHyb = installPercent * elevatorsPriceHyb;
-				document.getElementById("installFees").value = installFeesHyb;
-				var finalPriceHyb = elevatorsPriceHyb + installFeesHyb;
-				document.getElementById("finalPrice").value = finalPriceHyb;
+				async function hybridQuote() {
+					var hybFloors = document.getElementById("hybridFloors").value;
+					var hybBasements = document.getElementById("hybridBasements").value;
+					var hybOccupancy = document.getElementById("hybridOccupancy").value;
+					var totalStories = +hybFloors + +hybBasements;
+					var totalOccupancy = totalStories * hybOccupancy;
+					var shaftsReqHyb = totalOccupancy / 1000;
+					document.getElementById("elevatorsReq").value = Math.ceil(shaftsReqHyb);
+					var elevatorsReqHyb = document.getElementById("elevatorsReq").value;
+					var unitPriceHyb = document.getElementById("unitPrice").value;
+					var elevatorsPriceHyb = elevatorsReqHyb * unitPriceHyb;
+					document.getElementById("elevatorsPrice").value = elevatorsPriceHyb;
+					var installPercent = document.getElementById("installPercent").value;
+					var installFeesHyb = installPercent * elevatorsPriceHyb;
+					document.getElementById("installFees").value = installFeesHyb;
+					var finalPriceHyb = elevatorsPriceHyb + installFeesHyb;
+					document.getElementById("finalPrice").value = finalPriceHyb;
+
+					//FORMAT OUTPUT AS $USD.00//
+
+					var unitHyb = unitPriceHyb;
+					document.getElementById("unitPrice").value = new Intl.NumberFormat('us-EN', { style: 'currency', currency: 'USD' }).format(unitHyb);
+					var elevatorsHyb = elevatorsPriceHyb;
+					document.getElementById("elevatorsPrice").value = new Intl.NumberFormat('us-EN', { style: 'currency', currency: 'USD' }).format(elevatorsHyb);
+					var installHyb = installFeesHyb;
+					document.getElementById("installFees").value = new Intl.NumberFormat('us-EN', { style: 'currency', currency: 'USD' }).format(installHyb);
+					var finalHyb = finalPriceHyb;
+					document.getElementById("finalPrice").value = new Intl.NumberFormat('us-EN', { style: 'currency', currency: 'USD' }).format(finalHyb);
+
+					document.getElementById("building-type").addEventListener("change", refreshPage);
+
+					//RELOAD PAGE IF USER CHANGES BUILDING TYPE//
+
+					async function refreshPage() {
+						location.reload();
+					}
+				}
 			}
+
 
 
 		</script>

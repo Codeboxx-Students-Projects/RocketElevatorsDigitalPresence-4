@@ -1169,37 +1169,32 @@
 						</div><!-- /Alert Mandatory -->
 
 
-						<form action="" method="post" enctype="multipart/form-data">
+						<form>
 							<fieldset>
-								<input type="hidden" name="action" value="contact_send" />
+								<input type="hidden" />
 
 								<div class="row">
 									<div class="col-md-4">
 										<label for="contact:name">Full Name *</label>
-										<input required type="text" value="" class="form-control"
-											name="contact[name][required]" id="name">
+										<input required type="text" value="" class="form-control" id="name">
 									</div>
 									<div class="col-md-4">
 										<label for="contact:name">E-mail Address *</label>
-										<input required type="email" value="" class="form-control"
-											name="contact[email][required]" id="email">
+										<input required type="email" value="" class="form-control" id="email">
 									</div>
 									<div class="col-md-4">
 										<label for="contact:email">Phone Number</label>
-										<input required type="text" value="" class="form-control"
-											name="contact[phone][required]" id="phone">
+										<input required type="text" value="" class="form-control" id="phone">
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-4">
 										<label for="contact:phone">Business Name</label>
-										<input type="text" value="" class="form-control" name="contact[business]"
-											id="company_name">
+										<input type="text" value="" class="form-control" id="company_name">
 									</div>
 									<div class="col-md-4">
 										<label for="contact:phone">Project Name</label>
-										<input type="text" value="" class="form-control" name="contact[project]"
-											id="project_name">
+										<input type="text" value="" class="form-control" id="project_name">
 									</div>
 								</div>
 
@@ -1207,13 +1202,13 @@
 									<div class="col-md-12">
 										<label for="contact:message">Project Description*</label>
 										<textarea required maxlength="10000" rows="4" class="form-control"
-											name="contact[description]" id="project_description"></textarea>
+											id="project_description"></textarea>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-md-4">
 										<label for="contact_department">Department</label>
-										<select class="form-control pointer" name="contact[department]" id="department">
+										<select class="form-control pointer" id="department">
 											<option value="">--- Select ---</option>
 											<option value="New Construction">Residential</option>
 											<option value="Project Management">Commercial</option>
@@ -1226,7 +1221,7 @@
 									<div class="col-md-12">
 										<label for="contact:message">Message</label>
 										<textarea maxlength="10000" rows="2" class="form-control"
-											name="contact[message]" id="message"></textarea>
+											id="message"></textarea>
 									</div>
 								</div>
 
@@ -1235,8 +1230,8 @@
 										<label for="contact:attachment">File Attachment(s)</label>
 
 										<!-- custom file upload -->
-										<input class="custom-file-upload" type="file" id="file"
-											name="contact[attachment]" id="attachment" data-btn-text="Select a File" />
+										<input class="custom-file-upload" type="file" id="file" id="attachment"
+											data-btn-text="Select a File" />
 										<small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
 
 									</div>
@@ -1246,8 +1241,7 @@
 
 							<div class="row">
 								<div class="col-md-12">
-									<button type="submit" class="btn btn-primary disabled"><i
-											class="fa fa-check"></i>SUBMIT</button>
+									<button type="submit" class="btn btn-primary"><i></i>SUBMIT</button>
 								</div>
 							</div>
 						</form>

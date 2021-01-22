@@ -1,37 +1,37 @@
 /** SMOOTHSCROLL V1.2.1
 	Licensed under the terms of the MIT license.
  **************************************************************** **/
-(function($) {
+(function ($) {
 	$.extend({
 
-		smoothScroll: function() {
+		smoothScroll: function () {
 
 			// Scroll Variables (tweakable)
 			var defaultOptions = {
 
 				// Scrolling Core
-				frameRate        : 60, // [Hz]
-				animationTime    : 700, // [px]
-				stepSize         : 120, // [px]
+				frameRate: 60, // [Hz]
+				animationTime: 700, // [px]
+				stepSize: 120, // [px]
 
 				// Pulse (less tweakable)
 				// ratio of "tail" to "acceleration"
-				pulseAlgorithm   : true,
-				pulseScale       : 10,
-				pulseNormalize   : 1,
+				pulseAlgorithm: true,
+				pulseScale: 10,
+				pulseNormalize: 1,
 
 				// Acceleration
-				accelerationDelta : 20,  // 20
-				accelerationMax   : 1,   // 1
+				accelerationDelta: 20,  // 20
+				accelerationMax: 1,   // 1
 
 				// Keyboard Settings
-				keyboardSupport   : true,  // option
-				arrowScroll       : 50,     // [px]
+				keyboardSupport: true,  // option
+				arrowScroll: 50,     // [px]
 
 				// Other
-				touchpadSupport   : true,
-				fixedBackground   : true,
-				excluded          : ""
+				touchpadSupport: true,
+				fixedBackground: true,
+				excluded: ""
 			};
 
 			var options = defaultOptions;
@@ -40,14 +40,16 @@
 			var isExcluded = false;
 			var isFrame = false;
 			var direction = { x: 0, y: 0 };
-			var initDone  = false;
+			var initDone = false;
 			var root = document.documentElement;
 			var activeElement;
 			var observer;
-			var deltaBuffer = [ 120, 120, 120 ];
+			var deltaBuffer = [120, 120, 120];
 
-			var key = { left: 37, up: 38, right: 39, down: 40, spacebar: 32,
-						pageup: 33, pagedown: 34, end: 35, home: 36 };
+			var key = {
+				left: 37, up: 38, right: 39, down: 40, spacebar: 32,
+				pageup: 33, pagedown: 34, end: 35, home: 36
+			};
 
 
 			/***********************************************
@@ -121,8 +123,8 @@
 				 * on some pages. e.g.: html, body { height: 100% }
 				 */
 				else if (scrollHeight > windowHeight &&
-						(body.offsetHeight <= windowHeight ||
-						 html.offsetHeight <= windowHeight)) {
+					(body.offsetHeight <= windowHeight ||
+						html.offsetHeight <= windowHeight)) {
 
 					// DOMChange (throttle): fix height
 					var pending = false;
@@ -199,7 +201,7 @@
 						if (factor > 1) {
 							factor = Math.min(factor, options.accelerationMax);
 							left *= factor;
-							top  *= factor;
+							top *= factor;
 						}
 					}
 					lastScroll = +new Date;
@@ -210,7 +212,7 @@
 					x: left,
 					y: top,
 					lastX: (left < 0) ? 0.99 : -0.99,
-					lastY: (top  < 0) ? 0.99 : -0.99,
+					lastY: (top < 0) ? 0.99 : -0.99,
 					start: +new Date
 				});
 
@@ -230,7 +232,7 @@
 					for (var i = 0; i < que.length; i++) {
 
 						var item = que[i];
-						var elapsed  = now - item.start;
+						var elapsed = now - item.start;
 						var finished = (elapsed >= options.animationTime);
 
 						// scroll position: [0, 1]
@@ -265,7 +267,7 @@
 					}
 					else {
 						if (scrollX) elem.scrollLeft += scrollX;
-						if (scrollY) elem.scrollTop  += scrollY;
+						if (scrollY) elem.scrollTop += scrollY;
 					}
 
 					// clean up if there's nothing left to do
@@ -307,7 +309,7 @@
 				// element or default action is prevented
 				if (!overflowing || event.defaultPrevented ||
 					isNodeName(activeElement, "embed") ||
-				   (isNodeName(target, "embed") && /\.pdf/i.test(target.src))) {
+					(isNodeName(target, "embed") && /\.pdf/i.test(target.src))) {
 					return true;
 				}
 
@@ -344,23 +346,23 @@
 			 */
 			function keydown(event) {
 
-				var target   = event.target;
+				var target = event.target;
 				var modifier = event.ctrlKey || event.altKey || event.metaKey ||
-							  (event.shiftKey && event.keyCode !== key.spacebar);
+					(event.shiftKey && event.keyCode !== key.spacebar);
 
 				// do nothing if user is editing text
 				// or using a modifier key (except shift)
 				// or in a dropdown
-				if ( /input|textarea|select|embed/i.test(target.nodeName) ||
-					 target.isContentEditable ||
-					 event.defaultPrevented   ||
-					 modifier ) {
-				  return true;
+				if (/input|textarea|select|embed/i.test(target.nodeName) ||
+					target.isContentEditable ||
+					event.defaultPrevented ||
+					modifier) {
+					return true;
 				}
 				// spacebar should trigger button press
 				if (isNodeName(target, "button") &&
 					event.keyCode === key.spacebar) {
-				  return true;
+					return true;
 				}
 
 				var shift, x = 0, y = 0;
@@ -393,7 +395,7 @@
 						break;
 					case key.end:
 						var damt = elem.scrollHeight - elem.scrollTop - clientHeight;
-						y = (damt > 0) ? damt+10 : 0;
+						y = (damt > 0) ? damt + 10 : 0;
 						break;
 					case key.left:
 						x = -options.arrowScroll;
@@ -465,15 +467,15 @@
 			 ***********************************************/
 
 			function addEvent(type, fn, bubble) {
-				window.addEventListener(type, fn, (bubble||false));
+				window.addEventListener(type, fn, (bubble || false));
 			}
 
 			function removeEvent(type, fn, bubble) {
-				window.removeEventListener(type, fn, (bubble||false));
+				window.removeEventListener(type, fn, (bubble || false));
 			}
 
 			function isNodeName(el, tag) {
-				return (el.nodeName||"").toLowerCase() === tag.toLowerCase();
+				return (el.nodeName || "").toLowerCase() === tag.toLowerCase();
 			}
 
 			function directionCheck(x, y) {
@@ -495,11 +497,11 @@
 				deltaBuffer.push(deltaY);
 				deltaBuffer.shift();
 				clearTimeout(deltaBufferTimer);
-				var allEquals    = (deltaBuffer[0] == deltaBuffer[1] &&
-									deltaBuffer[1] == deltaBuffer[2]);
+				var allEquals = (deltaBuffer[0] == deltaBuffer[1] &&
+					deltaBuffer[1] == deltaBuffer[2]);
 				var allDivisable = (isDivisible(deltaBuffer[0], 120) &&
-									isDivisible(deltaBuffer[1], 120) &&
-									isDivisible(deltaBuffer[2], 120));
+					isDivisible(deltaBuffer[1], 120) &&
+					isDivisible(deltaBuffer[2], 120));
 				return !(allEquals || allDivisable);
 			}
 
@@ -508,11 +510,11 @@
 			}
 
 			var requestFrame = (function () {
-				  return  window.requestAnimationFrame       ||
-						  window.webkitRequestAnimationFrame ||
-						  function (callback, element, delay) {
-							  window.setTimeout(callback, delay || (1000/60));
-						  };
+				return window.requestAnimationFrame ||
+					window.webkitRequestAnimationFrame ||
+					function (callback, element, delay) {
+						window.setTimeout(callback, delay || (1000 / 60));
+					};
 			})();
 
 			var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
